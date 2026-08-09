@@ -1,0 +1,144 @@
+/* ============================================================
+   GARMR · chatbot.css — El asistente Garmr (identidad Vigilia)
+   ============================================================ */
+
+/* Botón flotante */
+.garmr-btn {
+  position: fixed;
+  right: var(--s-5);
+  bottom: var(--s-5);
+  z-index: 200;
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  border: 1px solid var(--vigia);
+  background: var(--noche);
+  cursor: pointer;
+  box-shadow: var(--vigia-glow), var(--sombra);
+  display: grid;
+  place-items: center;
+  transition: transform var(--rapido);
+}
+.garmr-btn:hover { transform: scale(1.06); }
+.garmr-btn img { width: 40px; height: 40px; }
+/* Ojos que "vigilan": un pulso sutil */
+.garmr-btn::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--vigia);
+  opacity: 0;
+  animation: vigilia 3s var(--ease) infinite;
+}
+@keyframes vigilia { 0% { opacity: 0.6; transform: scale(1); } 100% { opacity: 0; transform: scale(1.3); } }
+
+/* Panel */
+.garmr-panel {
+  position: fixed;
+  right: var(--s-5);
+  bottom: calc(var(--s-5) + 78px);
+  z-index: 200;
+  width: min(390px, calc(100vw - 2 * var(--s-5)));
+  height: min(580px, calc(100vh - 150px));
+  background: var(--noche);
+  border: 1px solid var(--borde);
+  box-shadow: var(--sombra-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform-origin: bottom right;
+  transform: scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--medio), opacity var(--medio);
+  clip-path: var(--clip-bisel);
+}
+.garmr-panel.abierto { transform: scale(1); opacity: 1; pointer-events: auto; }
+
+/* Cabecera */
+.garmr-head {
+  background: var(--abismo);
+  padding: var(--s-4) var(--s-5);
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  border-bottom: 1px solid var(--borde);
+}
+.garmr-head img { width: 38px; height: 38px; }
+.garmr-head .info { flex: 1; }
+.garmr-head strong { font-family: var(--f-display); font-size: var(--t-md); color: var(--escarcha); letter-spacing: 0.04em; }
+.garmr-head small { display: flex; align-items: center; gap: var(--s-2); color: var(--escarcha-2); font-size: var(--t-xs); }
+.garmr-head small::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--jade); box-shadow: 0 0 8px var(--jade); }
+.garmr-head button { background: none; border: 0; color: var(--escarcha-2); cursor: pointer; font-size: var(--t-xl); line-height: 1; }
+.garmr-head button:hover { color: var(--escarcha); }
+
+/* Cuerpo */
+.garmr-cuerpo {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.garmr-cuerpo::-webkit-scrollbar { width: 8px; }
+.garmr-cuerpo::-webkit-scrollbar-thumb { background: var(--borde); border-radius: 100px; }
+
+.msg { max-width: 86%; padding: var(--s-3) var(--s-4); font-size: var(--t-sm); line-height: 1.55; border-radius: var(--radio); }
+.msg--bot { background: var(--acero); border: 1px solid var(--borde); color: var(--escarcha); align-self: flex-start; border-bottom-left-radius: 2px; }
+.msg--yo { background: var(--vigia); color: var(--abismo); align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 500; }
+.msg strong { color: var(--vigia-2); }
+.msg--yo strong { color: var(--abismo); }
+.msg em { color: var(--escarcha); font-style: italic; }
+
+/* Sugerencias */
+.garmr-sugerencias { display: flex; flex-wrap: wrap; gap: var(--s-2); padding: 0 var(--s-5) var(--s-3); }
+.garmr-chip {
+  font-family: var(--f-texto);
+  font-size: var(--t-xs);
+  padding: var(--s-2) var(--s-3);
+  border-radius: 100px;
+  background: var(--acero);
+  border: 1px solid var(--borde);
+  color: var(--escarcha-2);
+  cursor: pointer;
+  transition: var(--rapido);
+}
+.garmr-chip:hover { border-color: var(--vigia); color: var(--escarcha); }
+
+/* Entrada */
+.garmr-input {
+  display: flex;
+  gap: var(--s-2);
+  padding: var(--s-4);
+  border-top: 1px solid var(--borde);
+  background: var(--abismo);
+}
+.garmr-input input {
+  flex: 1;
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--borde);
+  border-radius: 100px;
+  background: var(--acero);
+  color: var(--escarcha);
+}
+.garmr-input input::placeholder { color: var(--niebla); }
+.garmr-input input:focus { outline: none; border-color: var(--vigia); }
+.garmr-input button {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--vigia);
+  color: var(--abismo);
+  cursor: pointer;
+  display: grid; place-items: center;
+}
+.garmr-input button:hover { background: var(--vigia-2); }
+.garmr-input button svg { width: 20px; height: 20px; }
+
+/* Indicador "olfateando..." */
+.olfateando { display: inline-flex; gap: 4px; padding: var(--s-3) var(--s-4); }
+.olfateando i { width: 7px; height: 7px; border-radius: 50%; background: var(--escarcha-2); animation: pulso 1.2s infinite; }
+.olfateando i:nth-child(2) { animation-delay: 0.2s; }
+.olfateando i:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pulso { 0%,60%,100% { opacity: 0.3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
