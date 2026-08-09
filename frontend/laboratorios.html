@@ -54,11 +54,10 @@
             <h3>El correo trampa</h3>
             <p>Te llega un correo sospechoso. ¿Caerías? Aprende a oler el phishing.</p>
           </button>
-          <button class="lab-card bloqueada" disabled>
+          <button class="lab-card" data-lab="clave" id="cardClave">
             <span class="num">LAB 02</span>
             <h3>La clave débil</h3>
             <p>Descubre en vivo cuánto tarda un atacante en romper tu contraseña.</p>
-            <span class="pronto">Próximamente</span>
           </button>
           <button class="lab-card bloqueada" disabled>
             <span class="num">LAB 03</span>
@@ -71,7 +70,7 @@
     </section>
 
     <!-- LABORATORIO 1: PHISHING -->
-    <section class="seccion" style="padding-top: 0;">
+    <section class="seccion" style="padding-top: 0;" data-lab-panel="phishing">
       <div class="contenedor">
         <div class="lab-escena" id="labPhishing">
           <div class="lab-intro">
@@ -167,6 +166,54 @@
         </div>
       </div>
     </section>
+
+    <!-- LABORATORIO 2: LA CLAVE DÉBIL -->
+    <section class="seccion" style="padding-top: 0;" data-lab-panel="clave" hidden>
+      <div class="contenedor">
+        <div class="lab-escena" id="labClave">
+          <div class="lab-intro">
+            <img src="assets/sigilo.svg" alt="" />
+            <div class="burbuja">
+              <strong>Garmr:</strong> Vamos a poner a prueba una contraseña. Escribe una abajo y te digo, en tiempo real, cuánto tardaría un atacante en romperla. <em>Tranquilo: no se guarda ni se envía a ningún lado — todo pasa en tu navegador.</em>
+            </div>
+          </div>
+
+          <div class="clave-lab">
+            <div class="clave-campo">
+              <input type="text" id="claveInput" placeholder="Escribe una contraseña para probarla…" autocomplete="off" spellcheck="false" />
+            </div>
+            <p class="clave-nota">🔒 No se guarda ni viaja por internet. Es solo tu navegador calculando.</p>
+
+            <div class="clave-medidor" id="claveMedidor"><i></i><i></i><i></i><i></i><i></i></div>
+
+            <div class="clave-tiempo" id="claveTiempoCaja">
+              <span class="etiqueta">Un atacante la rompería en</span>
+              <b id="claveTiempo">—</b>
+            </div>
+
+            <div class="clave-analisis" id="claveAnalisis"></div>
+
+            <div class="lab-intro garmr-comenta">
+              <img src="assets/sigilo.svg" alt="" />
+              <div class="burbuja" id="claveComentario"><strong>Garmr:</strong> Escribe una contraseña arriba y te digo qué tan rápido caería. Prueba primero con una mala a propósito, como <em>123456</em>.</div>
+            </div>
+          </div>
+
+          <div class="lab-leccion">
+            <h4>Cómo hacer una clave que resista</h4>
+            <ul>
+              <li>Mejor una <strong>frase larga</strong> que una palabra rara: "MiPerroGarmrVigilaDeNoche" vence a "P@ss1".</li>
+              <li>Que sea <strong>única</strong> por sitio: si roban una, no caen las demás.</li>
+              <li>Usa un <strong>gestor de contraseñas</strong> para no tener que recordarlas.</li>
+              <li>Y lo más importante: activa el <strong>doble factor (2FA)</strong>. Es la segunda chapa que solo tú abres.</li>
+            </ul>
+            <div class="lab-reiniciar">
+              <a class="btn btn--primario" href="register.html">Revisar mi sitio gratis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -201,7 +248,9 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/laboratorios.js"></script>
   <script src="js/lab-phishing.js"></script>
+  <script src="js/lab-clave.js"></script>
   <script src="js/chatbot.js"></script>
 </body>
 </html>

@@ -143,3 +143,48 @@
 .lab-leccion li { display: flex; gap: var(--s-3); font-size: var(--t-sm); color: var(--escarcha); }
 .lab-leccion li::before { content: "✓"; color: var(--jade); font-weight: 700; }
 .lab-reiniciar { margin-top: var(--s-5); }
+
+/* ============================================================
+   LAB 02 · La clave débil
+   ============================================================ */
+.clave-lab { max-width: 620px; }
+.clave-campo { position: relative; margin-top: var(--s-4); }
+.clave-campo input {
+  width: 100%;
+  padding: var(--s-4) var(--s-5);
+  font-family: var(--f-mono);
+  font-size: var(--t-md);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--acero);
+  color: var(--escarcha);
+}
+.clave-campo input:focus { outline: none; border-color: var(--vigia); box-shadow: 0 0 0 3px var(--vigia-tenue); }
+.clave-campo input::placeholder { color: var(--niebla); }
+.clave-nota { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--niebla); margin-top: var(--s-2); }
+
+.clave-medidor { display: flex; gap: 6px; margin-top: var(--s-5); }
+.clave-medidor i { flex: 1; height: 8px; border-radius: 100px; background: var(--acero); border: 1px solid var(--borde); transition: background var(--medio), border-color var(--medio); }
+
+.clave-tiempo {
+  margin-top: var(--s-5);
+  padding: var(--s-5);
+  background: var(--noche);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  text-align: center;
+}
+.clave-tiempo .etiqueta { display: block; font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--escarcha-2); margin-bottom: var(--s-2); }
+.clave-tiempo b { font-family: var(--f-display); font-size: var(--t-2xl); color: var(--escarcha); line-height: 1.1; transition: color var(--medio); }
+.clave-tiempo.malo b { color: var(--sangre); }
+.clave-tiempo.medio b { color: var(--sev-media); }
+.clave-tiempo.bueno b { color: var(--jade); }
+
+.clave-analisis { margin-top: var(--s-5); display: flex; flex-direction: column; gap: var(--s-2); }
+.clave-check { display: flex; align-items: center; gap: var(--s-3); font-size: var(--t-sm); color: var(--escarcha-2); }
+.clave-check .marca { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: var(--t-xs); flex-shrink: 0; }
+.clave-check.ok .marca { background: rgba(55,160,138,0.16); color: var(--jade); }
+.clave-check.no .marca { background: var(--sangre-tenue); color: var(--sangre); }
+.clave-check.ok { color: var(--escarcha); }
+
+.garmr-comenta { margin-top: var(--s-5); }
