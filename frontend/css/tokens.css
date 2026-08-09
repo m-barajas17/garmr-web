@@ -1,0 +1,90 @@
+/* ============================================================
+   GARMR · Sistema de diseño — identidad "VIGILIA"
+   El guardián en la oscuridad. Azul-negro frío, luz del vigía
+   en índigo, rojo sangre solo para el peligro.
+   Aquí viven solo las variables; el resto del CSS las consume.
+   ============================================================ */
+
+:root {
+  /* --- La oscuridad (base) --- */
+  --abismo:   #060910;   /* fondo, la noche */
+  --noche:    #0B111E;   /* superficie oscura elevada */
+  --acero:    #141E33;   /* tarjetas */
+  --acero-2:  #1B2740;   /* tarjeta elevada / hover */
+  --borde:    #22304F;   /* bordes sobre oscuro */
+
+  /* --- La luz --- */
+  --escarcha:   #C9D7F0; /* texto principal, luz de luna */
+  --escarcha-2: #8093B5; /* texto secundario */
+  --niebla:     #55627E; /* texto tenue, captions */
+
+  /* --- La luz del vigía (acento firma) --- */
+  --vigia:      #6E86FF; /* índigo luminoso, usar con disciplina */
+  --vigia-2:    #93A6FF;
+  --vigia-tenue:rgba(110, 134, 255, 0.12);
+  --vigia-glow: 0 0 34px rgba(110, 134, 255, 0.35);
+
+  /* --- El peligro (rojo sangre nórdico) --- */
+  --sangre:      #E0474B;
+  --sangre-tenue:rgba(224, 71, 75, 0.12);
+
+  /* --- Lo seguro --- */
+  --jade: #37A08A;
+
+  /* --- Severidades (mapea el modelo de puntaje GARMR) --- */
+  --sev-critica: #E0474B;  /* rojo sangre */
+  --sev-alta:    #DB6B6B;  /* rojo apagado */
+  --sev-media:   #6E86FF;  /* luz del vigía */
+  --sev-baja:    #8093B5;  /* acero pálido */
+  --sev-ok:      #37A08A;  /* jade */
+
+  /* --- Tipografía --- */
+  --f-display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --f-texto:   "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --f-mono:    "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* Escala tipográfica (base 16px) */
+  --t-xs: 0.75rem;  --t-sm: 0.875rem; --t-base: 1rem;  --t-md: 1.125rem;
+  --t-lg: 1.375rem; --t-xl: 1.75rem;  --t-2xl: 2.25rem;
+  --t-3xl: 3rem;    --t-4xl: 3.75rem;
+
+  /* --- Espaciado (escala de 4px) --- */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem;
+  --s-5: 1.5rem;  --s-6: 2rem;   --s-7: 3rem;    --s-8: 4rem;
+  --s-9: 6rem;    --s-10: 8rem;
+
+  /* --- Forma --- */
+  /* Radio pequeño: la identidad usa biseles, no curvas suaves */
+  --radio: 5px;
+  --bisel: 14px;             /* tamaño del corte de esquina (notch) */
+  --linea: 1px solid var(--borde);
+
+  /* Corte biselado en esquinas opuestas: sello visual de GARMR */
+  --clip-bisel: polygon(
+    var(--bisel) 0, 100% 0, 100% calc(100% - var(--bisel)),
+    calc(100% - var(--bisel)) 100%, 0 100%, 0 var(--bisel)
+  );
+
+  /* --- Sombras --- */
+  --sombra:    0 20px 50px rgba(0, 0, 0, 0.45);
+  --sombra-lg: 0 40px 90px rgba(0, 0, 0, 0.55);
+
+  /* --- Layout --- */
+  --ancho-max: 1180px;
+  --nav-alto: 76px;
+
+  /* --- Movimiento --- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --rapido: 180ms var(--ease);
+  --medio:  340ms var(--ease);
+  --lento:  650ms var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

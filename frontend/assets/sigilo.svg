@@ -1,0 +1,16 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GARMR">
+  <!-- Escudo / puerta biselada -->
+  <path d="M20 3 L34 9 V20 C34 29 28 35 20 37 C12 35 6 29 6 20 V9 Z"
+        fill="#0B111E" stroke="#6E86FF" stroke-width="1.4" stroke-linejoin="round"/>
+  <!-- Orejas del sabueso -->
+  <path d="M12 14 L12 10 L17 14 M28 14 L28 10 L23 14"
+        stroke="#6E86FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Contorno de la cabeza -->
+  <path d="M12 14 L14 24 C14 28 17 30.5 20 31.5 C23 30.5 26 28 26 24 L28 14"
+        stroke="#C9D7F0" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+  <!-- Ojos vigilantes -->
+  <circle cx="16.5" cy="20" r="1.6" fill="#6E86FF"/>
+  <circle cx="23.5" cy="20" r="1.6" fill="#6E86FF"/>
+  <!-- Hocico -->
+  <path d="M18.5 25 L21.5 25 L20 27 Z" fill="#C9D7F0"/>
+</svg>
