@@ -218,3 +218,66 @@
   .auth { grid-template-columns: 1fr; }
   .auth__aside { display: none; }
 }
+
+/* ==================== DASHBOARD (panel del cliente) ==================== */
+.panel { min-height: 100vh; }
+.panel__top {
+  height: var(--nav-alto);
+  display: flex; align-items: center;
+  background: rgba(6,9,16,0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--borde);
+  position: sticky; top: 0; z-index: 100;
+}
+.panel__top .nav__inner { width: 100%; }
+.panel__usuario { display: flex; align-items: center; gap: var(--s-3); font-size: var(--t-sm); color: var(--escarcha); }
+.panel__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--vigia); color: var(--abismo); display: grid; place-items: center; font-weight: 700; font-family: var(--f-display); }
+.panel__wrap { max-width: var(--ancho-max); margin-inline: auto; padding: var(--s-7) var(--s-5); }
+.panel__cabecera { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--s-6); flex-wrap: wrap; gap: var(--s-4); }
+.panel__cabecera h1 { font-size: var(--t-2xl); }
+.panel__cabecera .meta { color: var(--escarcha-2); font-size: var(--t-sm); font-family: var(--f-mono); }
+
+.panel__grid { display: grid; grid-template-columns: 320px 1fr; gap: var(--s-5); align-items: start; }
+@media (max-width: 900px) { .panel__grid { grid-template-columns: 1fr; } }
+
+.tarjeta-puntaje { text-align: center; }
+.dial-mini { position: relative; width: 160px; height: 160px; margin: var(--s-4) auto; }
+.dial-mini svg { transform: rotate(-90deg); }
+.dial-mini .aro-fondo { fill: none; stroke: var(--borde); stroke-width: 12; }
+.dial-mini .aro { fill: none; stroke: var(--sev-media); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 427; stroke-dashoffset: 427; transition: stroke-dashoffset 1.4s var(--ease); }
+.dial-mini .cifra { position: absolute; inset: 0; display: grid; place-content: center; }
+.dial-mini .cifra b { font-family: var(--f-display); font-size: var(--t-2xl); color: var(--escarcha); }
+.dial-mini .cifra span { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--escarcha-2); }
+.estado-linea { font-family: var(--f-mono); font-size: var(--t-xs); text-transform: uppercase; letter-spacing: 0.12em; color: var(--vigia-2); }
+.desglose { margin-top: var(--s-5); text-align: left; border-top: 1px solid var(--borde); padding-top: var(--s-4); }
+.desglose div { display: flex; justify-content: space-between; font-size: var(--t-sm); padding: var(--s-1) 0; color: var(--escarcha-2); }
+
+.hallazgos-lista { display: flex; flex-direction: column; gap: var(--s-3); }
+.hallazgo {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--s-4);
+  align-items: start;
+  padding: var(--s-5);
+  background: var(--acero);
+  border: 1px solid var(--borde);
+  border-left: 2px solid var(--niebla);
+}
+.hallazgo--critica { border-left-color: var(--sev-critica); }
+.hallazgo--media { border-left-color: var(--sev-media); }
+.hallazgo--baja { border-left-color: var(--sev-baja); }
+.hallazgo__cuerpo h4 { font-family: var(--f-texto); font-size: var(--t-base); margin-bottom: var(--s-1); color: var(--escarcha); }
+.hallazgo__cuerpo p { font-size: var(--t-sm); color: var(--escarcha-2); }
+.hallazgo__meta { display: flex; flex-direction: column; gap: var(--s-2); align-items: flex-end; }
+.hallazgo__meta .rev { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--niebla); }
+
+.plan-accion { margin-top: var(--s-6); }
+.paso { display: flex; gap: var(--s-4); padding: var(--s-4) 0; border-bottom: 1px solid var(--borde); }
+.paso:last-child { border-bottom: 0; }
+.paso__num { width: 28px; height: 28px; border-radius: 50%; background: var(--vigia); color: var(--abismo); display: grid; place-items: center; font-size: var(--t-sm); font-weight: 700; flex-shrink: 0; font-family: var(--f-display); }
+.paso__txt strong { display: block; font-size: var(--t-sm); color: var(--escarcha); }
+.paso__txt span { font-size: var(--t-xs); color: var(--niebla); font-family: var(--f-mono); }
+
+.cta-auditoria { margin-top: var(--s-5); background: var(--noche); display: flex; justify-content: space-between; align-items: center; gap: var(--s-5); flex-wrap: wrap; }
+.cta-auditoria h3 { font-size: var(--t-md); }
+.cta-auditoria p { color: var(--escarcha-2); font-size: var(--t-sm); max-width: 48ch; }

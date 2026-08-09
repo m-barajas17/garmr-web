@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel · GARMR</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <div class="panel">
+    <header class="panel__top">
+      <div class="nav__inner">
+        <a class="marca" href="index.html">
+          <img src="assets/sigilo.svg" alt="" width="34" height="34" />
+          GAR<b>M</b>R
+        </a>
+        <div class="panel__usuario">
+          <span>Panadería La Espiga</span>
+          <span class="panel__avatar">P</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="panel__wrap">
+      <div class="panel__cabecera">
+        <div>
+          <span class="eyebrow">Diagnóstico Nivel 0 · Externo pasivo</span>
+          <h1>Estado de seguridad de su sitio</h1>
+          <p class="meta"><span class="codigo">laespiga.com.co</span> · Revisado el 6 de agosto de 2026 · 13 revisiones</p>
+        </div>
+        <a class="btn btn--fantasma" href="#">Descargar informes (PDF)</a>
+      </div>
+
+      <div class="panel__grid">
+        <!-- Puntaje -->
+        <aside class="tarjeta tarjeta--bisel tarjeta-puntaje" id="tarjetaPuntaje">
+          <span class="estado-linea">Requiere atención</span>
+          <div class="dial-mini">
+            <svg width="160" height="160" viewBox="0 0 160 160">
+              <circle class="aro-fondo" cx="80" cy="80" r="68" />
+              <circle class="aro" id="aroPanel" cx="80" cy="80" r="68" />
+            </svg>
+            <div class="cifra"><b id="cifraPanel">0</b><span>DE 100</span></div>
+          </div>
+          <p style="font-size: var(--t-sm); color: var(--escarcha-2);">Buenas bases (cifrado y disponibilidad sólidos), pero hay un hallazgo crítico que conviene cerrar pronto.</p>
+          <div class="desglose">
+            <div><span>Críticos</span><b style="color: var(--sev-critica);">1</b></div>
+            <div><span>Medios</span><b style="color: var(--sev-media);">1</b></div>
+            <div><span>Bajos</span><b style="color: var(--sev-baja);">1</b></div>
+            <div><span>Sin hallazgo</span><b style="color: var(--jade);">4</b></div>
+            <div><span>No aplica</span><b style="color: var(--niebla);">6</b></div>
+          </div>
+        </aside>
+
+        <!-- Hallazgos + plan -->
+        <div>
+          <h3 style="margin-bottom: var(--s-4);">Hallazgos encontrados</h3>
+          <div class="hallazgos-lista">
+            <article class="hallazgo hallazgo--critica">
+              <span class="insignia insignia--critica">Crítica</span>
+              <div class="hallazgo__cuerpo">
+                <h4>Información interna del proyecto expuesta</h4>
+                <p>Un archivo de configuración quedó accesible desde el navegador y revela dónde vive el código del sitio. No es una fuga de datos de clientes, pero es una puerta que conviene cerrar.</p>
+              </div>
+              <div class="hallazgo__meta"><span class="codigo">GARMR-A01-05</span><span class="rev">R12</span></div>
+            </article>
+
+            <article class="hallazgo hallazgo--media">
+              <span class="insignia insignia--media">Media</span>
+              <div class="hallazgo__cuerpo">
+                <h4>Faltan protecciones estándar del navegador</h4>
+                <p>El sitio no entrega ciertas instrucciones de seguridad al navegador del visitante. No es una falla activa, es una ausencia de blindaje adicional.</p>
+              </div>
+              <div class="hallazgo__meta"><span class="codigo">GARMR-A02-03</span><span class="rev">R01</span></div>
+            </article>
+
+            <article class="hallazgo hallazgo--baja">
+              <span class="insignia insignia--baja">Baja</span>
+              <div class="hallazgo__cuerpo">
+                <h4>Se revelan las versiones de la tecnología</h4>
+                <p>El sitio muestra públicamente las versiones exactas de algunas herramientas con las que está construido. Bajo por sí solo, pero le ahorra trabajo a un atacante.</p>
+              </div>
+              <div class="hallazgo__meta"><span class="codigo">GARMR-A02-08</span><span class="rev">R05</span></div>
+            </article>
+          </div>
+
+          <div class="tarjeta tarjeta--bisel plan-accion">
+            <h3 style="margin-bottom: var(--s-2);">Plan de acción priorizado</h3>
+            <p style="font-size: var(--t-sm); color: var(--escarcha-2); margin-bottom: var(--s-4);">En orden de urgencia. Su desarrollador puede ejecutarlo con el informe técnico.</p>
+            <div class="paso"><span class="paso__num">1</span><div class="paso__txt"><strong>Restringir el acceso al archivo de configuración expuesto</strong><span>Plazo: 24–72 horas</span></div></div>
+            <div class="paso"><span class="paso__num">2</span><div class="paso__txt"><strong>Configurar las protecciones del navegador faltantes</strong><span>Plazo: 1–2 semanas</span></div></div>
+            <div class="paso"><span class="paso__num">3</span><div class="paso__txt"><strong>Ocultar las versiones de tecnología expuestas</strong><span>Plazo: próximo mantenimiento</span></div></div>
+          </div>
+
+          <div class="tarjeta tarjeta--bisel cta-auditoria">
+            <div>
+              <h3>¿Quiere confirmar estos hallazgos y cerrarlos?</h3>
+              <p>El siguiente paso es una auditoría completa (Nivel 1): verificación manual, revisión interna y pasos exactos de corrección.</p>
+            </div>
+            <a class="btn btn--primario" href="#">Solicitar auditoría</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var aro = document.getElementById("aroPanel");
+      var cifra = document.getElementById("cifraPanel");
+      if (!aro || !cifra) return;
+      var C = 2 * Math.PI * 68;
+      aro.style.strokeDasharray = String(C);
+      aro.style.strokeDashoffset = String(C);
+      setTimeout(function () {
+        aro.style.strokeDashoffset = String(C * (1 - 64 / 100));
+        var ini = null;
+        function paso(ts) {
+          if (!ini) ini = ts;
+          var p = Math.min((ts - ini) / 1400, 1);
+          cifra.textContent = String(Math.round(64 * (1 - Math.pow(1 - p, 3))));
+          if (p < 1) requestAnimationFrame(paso);
+        }
+        requestAnimationFrame(paso);
+      }, 250);
+    })();
+  </script>
+</body>
+</html>
