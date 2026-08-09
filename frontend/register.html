@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear cuenta · GARMR</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <div class="auth">
+    <aside class="auth__aside">
+      <a class="marca" href="index.html">
+        <img src="assets/sigilo.svg" alt="" width="34" height="34" />
+        GAR<b>M</b>R
+      </a>
+      <div>
+        <h2>Su primer diagnóstico es gratis.</h2>
+        <p>Cree su cuenta y reciba una revisión externa de su sitio, con puntaje y hallazgos explicados en lenguaje claro.</p>
+        <ul class="auth__lista">
+          <li>Sin instalar nada, sin contraseñas de su sitio</li>
+          <li>Resultado en 24–48 horas</li>
+          <li>Usted decide qué hacer después</li>
+        </ul>
+      </div>
+      <p class="auth__legal">Sus datos se tratan conforme a la Ley 1581 de 2012.</p>
+    </aside>
+
+    <div class="auth__form">
+      <div class="auth__form-inner">
+        <h1>Crear cuenta</h1>
+        <p class="sub">Cuéntenos de su negocio y su sitio.</p>
+
+        <div class="aviso-ok" id="avisoOk">¡Cuenta creada! Preparando su panel…</div>
+
+        <form id="formRegistro" novalidate>
+          <div class="campo">
+            <label for="negocio">Nombre del negocio</label>
+            <input type="text" id="negocio" name="negocio" placeholder="Panadería La Espiga" />
+            <p class="error" id="errNegocio">Ingrese el nombre de su negocio.</p>
+          </div>
+          <div class="campo">
+            <label for="sitio">Dirección de su sitio</label>
+            <input type="url" id="sitio" name="sitio" placeholder="https://misitio.com.co" />
+            <p class="error" id="errSitio">Ingrese una dirección válida (con https://).</p>
+          </div>
+          <div class="campo">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="nombre@empresa.com.co" autocomplete="email" />
+            <p class="error" id="errEmail">Ingrese un correo válido.</p>
+          </div>
+          <div class="campo">
+            <label for="pass">Contraseña</label>
+            <input type="password" id="pass" name="pass" placeholder="Mínimo 8 caracteres" autocomplete="new-password" />
+            <div class="medidor-clave"><i id="barraClave"></i></div>
+            <p class="pista" id="pistaClave">Use al menos 8 caracteres, con mayúscula y número.</p>
+            <p class="error" id="errPass">La contraseña no cumple los requisitos.</p>
+          </div>
+          <button type="submit" class="btn btn--primario btn--bloque btn--grande">Crear cuenta y pedir diagnóstico</button>
+        </form>
+
+        <p class="alt">¿Ya tiene cuenta? <a href="login.html">Inicie sesión</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
