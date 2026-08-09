@@ -59,11 +59,10 @@
             <h3>La clave débil</h3>
             <p>Descubre en vivo cuánto tarda un atacante en romper tu contraseña.</p>
           </button>
-          <button class="lab-card bloqueada" disabled>
+          <button class="lab-card" data-lab="plugin" id="cardPlugin">
             <span class="num">LAB 03</span>
             <h3>El plugin abandonado</h3>
             <p>Vive cómo un complemento sin actualizar abre la puerta.</p>
-            <span class="pronto">Próximamente</span>
           </button>
         </div>
       </div>
@@ -214,6 +213,90 @@
         </div>
       </div>
     </section>
+
+    <!-- LABORATORIO 3: EL PLUGIN ABANDONADO -->
+    <section class="seccion" style="padding-top: 0;" data-lab-panel="plugin" hidden>
+      <div class="contenedor">
+        <div class="lab-escena" id="labPlugin">
+          <div class="lab-intro">
+            <img src="assets/sigilo.svg" alt="" />
+            <div class="burbuja">
+              <strong>Garmr:</strong> Este es el panel de complementos de un sitio en WordPress. Varios tienen actualización pendiente. <em>Actualízalos</em> y luego comprueba si con eso basta para estar seguro. Ojo con uno en particular…
+            </div>
+          </div>
+
+          <div class="plugins-marco">
+            <div class="plugins-barra">
+              <b>Complementos instalados</b>
+              <small>tienda-ejemplo.com.co</small>
+            </div>
+            <div class="plugins-tabla" id="pluginsTabla">
+
+              <div class="plugin-fila" data-estado="pendiente">
+                <div class="plugin-info"><b>Formulario de Contacto</b><span>v5.8</span></div>
+                <div class="plugin-estado pendiente">Actualización a v5.9</div>
+                <div class="plugin-accion"><button class="btn-mini btn-actualizar">Actualizar</button></div>
+              </div>
+
+              <div class="plugin-fila" data-estado="pendiente">
+                <div class="plugin-info"><b>WooCommerce</b><span>v8.2</span></div>
+                <div class="plugin-estado pendiente">Actualización a v8.6</div>
+                <div class="plugin-accion"><button class="btn-mini btn-actualizar">Actualizar</button></div>
+              </div>
+
+              <div class="plugin-fila" data-estado="al-dia">
+                <div class="plugin-info"><b>SEO Optimizer</b><span>v3.1</span></div>
+                <div class="plugin-estado al-dia">Actualizado</div>
+                <div class="plugin-accion"><span class="plugin-hecho">✓ Al día</span></div>
+              </div>
+
+              <div class="plugin-fila" data-estado="vulnerable">
+                <div class="plugin-info"><b>Slider Deluxe</b><span>v2.0</span></div>
+                <div class="plugin-estado vuln">⚠ Sin soporte desde 2022 · falla conocida</div>
+                <div class="plugin-accion"><span class="plugin-sin">Sin actualización</span></div>
+              </div>
+
+              <div class="plugin-fila" data-estado="pendiente">
+                <div class="plugin-info"><b>Copias de Respaldo</b><span>v1.4</span></div>
+                <div class="plugin-estado pendiente">Actualización a v1.5</div>
+                <div class="plugin-accion"><button class="btn-mini btn-actualizar">Actualizar</button></div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="plugin-controles">
+            <button class="btn btn--peligro" id="btnAtaque">🔍 Ver qué haría un atacante</button>
+            <span class="plugin-aviso" id="pluginAviso">Actualiza los complementos pendientes y luego simula el ataque.</span>
+          </div>
+
+          <!-- Resultado del ataque -->
+          <div class="ataque-panel" id="ataquePanel">
+            <div class="veredicto" id="ataqueVeredicto">
+              <img src="assets/sigilo.svg" alt="" />
+              <div>
+                <h3 id="ataqueTitulo"></h3>
+                <p id="ataqueTexto"></p>
+              </div>
+            </div>
+
+            <div class="lab-leccion">
+              <h4>La lección del complemento abandonado</h4>
+              <ul>
+                <li>Actualizar es vital — pero solo sirve si <strong>hay actualización que instalar</strong>.</li>
+                <li>Un complemento <strong>abandonado</strong> (sin soporte) nunca recibirá el arreglo: su puerta queda abierta para siempre.</li>
+                <li>La única solución real es <strong>eliminarlo</strong> y, si hace falta, reemplazarlo por uno mantenido.</li>
+                <li>Menos complementos = menos puertas. Borra los que no uses.</li>
+              </ul>
+              <div class="lab-reiniciar">
+                <button class="btn btn--peligro btn-eliminar" id="btnEliminarVuln">Eliminar Slider Deluxe</button>
+                <a class="btn btn--primario" href="register.html">Revisar mi sitio gratis</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -251,6 +334,7 @@
   <script src="js/laboratorios.js"></script>
   <script src="js/lab-phishing.js"></script>
   <script src="js/lab-clave.js"></script>
+  <script src="js/lab-plugin.js"></script>
   <script src="js/chatbot.js"></script>
 </body>
 </html>

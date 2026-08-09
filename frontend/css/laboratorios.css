@@ -188,3 +188,59 @@
 .clave-check.ok { color: var(--escarcha); }
 
 .garmr-comenta { margin-top: var(--s-5); }
+
+/* ============================================================
+   LAB 03 · El plugin abandonado
+   ============================================================ */
+.plugins-marco { position: relative; max-width: 680px; margin-top: var(--s-4); }
+.plugins-barra { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-3) var(--s-4); background: var(--abismo); border: 1px solid var(--borde); border-bottom: 0; border-radius: var(--radio) var(--radio) 0 0; }
+.plugins-barra b { font-family: var(--f-display); font-size: var(--t-sm); color: var(--escarcha); }
+.plugins-barra small { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--niebla); margin-left: auto; }
+
+.plugins-tabla { border: 1px solid var(--borde); border-radius: 0 0 var(--radio) var(--radio); overflow: hidden; }
+.plugin-fila {
+  display: grid;
+  grid-template-columns: 1.4fr 1.4fr auto;
+  gap: var(--s-4);
+  align-items: center;
+  padding: var(--s-4);
+  background: var(--acero);
+  border-bottom: 1px solid var(--borde);
+  transition: background var(--medio), box-shadow var(--medio);
+}
+.plugin-fila:last-child { border-bottom: 0; }
+.plugin-info b { display: block; font-size: var(--t-sm); color: var(--escarcha); }
+.plugin-info span { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--niebla); }
+.plugin-estado { font-size: var(--t-xs); font-family: var(--f-mono); }
+.plugin-estado.al-dia { color: var(--jade); }
+.plugin-estado.pendiente { color: var(--vigia-2); }
+.plugin-estado.vuln { color: var(--sangre); }
+.plugin-accion { text-align: right; }
+.btn-mini {
+  font-family: var(--f-texto);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--radio);
+  border: 1px solid var(--vigia);
+  background: transparent;
+  color: var(--vigia-2);
+  cursor: pointer;
+  transition: var(--rapido);
+}
+.btn-mini:hover { background: var(--vigia-tenue); }
+.btn-mini--peligro { border-color: var(--sangre); color: var(--sangre); }
+.btn-mini--peligro:hover { background: var(--sangre-tenue); }
+.plugin-hecho { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--jade); }
+.plugin-sin { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--niebla); }
+
+/* Estados durante el ataque simulado */
+.plugin-fila.escaneando { box-shadow: inset 3px 0 0 var(--vigia); background: var(--acero-2); }
+.plugin-fila.atacada { box-shadow: inset 3px 0 0 var(--sangre); background: var(--sangre-tenue); }
+.plugin-fila.resuelta { opacity: 0.55; }
+
+.plugin-controles { margin-top: var(--s-5); display: flex; gap: var(--s-4); flex-wrap: wrap; align-items: center; }
+.plugin-aviso { font-size: var(--t-sm); color: var(--escarcha-2); }
+
+.ataque-panel { margin-top: var(--s-6); display: none; }
+.ataque-panel.visible { display: block; }
