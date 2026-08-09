@@ -1,0 +1,150 @@
+/* ============================================================
+   GARMR · Estilos de la landing "VIGILIA"
+   ============================================================ */
+
+/* ==================== HERO ==================== */
+.hero {
+  position: relative;
+  padding-block: var(--s-10) var(--s-10);
+  overflow: hidden;
+}
+.hero::before { /* resplandor del vigía */
+  content: "";
+  position: absolute;
+  top: -30%; left: 50%;
+  width: 900px; height: 900px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(110,134,255,0.12), transparent 62%);
+  pointer-events: none;
+}
+.hero__sigilo { /* sigilo gigante de fondo */
+  position: absolute;
+  right: -140px; top: 30px;
+  width: 620px;
+  opacity: 0.045;
+  pointer-events: none;
+}
+.hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--s-8);
+  align-items: center;
+}
+.hero h1 { margin-bottom: var(--s-5); }
+.hero h1 .luz { color: var(--vigia); }
+.hero__lead { font-size: var(--t-md); color: var(--escarcha-2); margin-bottom: var(--s-6); max-width: 46ch; }
+.hero__acciones { display: flex; gap: var(--s-4); flex-wrap: wrap; margin-bottom: var(--s-6); }
+.hero__nota { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--escarcha-2); letter-spacing: 0.03em; }
+.hero__nota span { color: var(--jade); }
+
+/* Medidor de guardia — elemento firma */
+.medidor {
+  position: relative;
+  background: linear-gradient(160deg, var(--noche), var(--acero));
+  border: 1px solid var(--borde);
+  padding: var(--s-6);
+  box-shadow: var(--sombra-lg);
+  clip-path: var(--clip-bisel);
+}
+.medidor__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s-5); }
+.medidor__tag { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; border: 1px solid var(--borde); border-radius: 3px; color: var(--escarcha-2); }
+.medidor__url { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--escarcha-2); }
+.medidor__dial { position: relative; width: 200px; height: 200px; margin: 0 auto var(--s-4); }
+.medidor__dial svg { transform: rotate(-90deg); }
+.medidor__aro-fondo { fill: none; stroke: var(--borde); stroke-width: 13; }
+.medidor__aro { fill: none; stroke: var(--vigia); stroke-width: 13; stroke-linecap: round; stroke-dasharray: 534; stroke-dashoffset: 534; transition: stroke-dashoffset 1.6s var(--ease); }
+.medidor__cifra { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.medidor__cifra b { font-family: var(--f-display); font-size: 52px; color: var(--escarcha); line-height: 1; }
+.medidor__cifra span { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--escarcha-2); letter-spacing: 0.1em; }
+.medidor__estado { text-align: center; font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--vigia-2); margin-bottom: var(--s-5); }
+.medidor__hallazgos { display: flex; flex-direction: column; gap: var(--s-2); }
+.medidor__fila { display: flex; align-items: center; justify-content: space-between; font-size: var(--t-sm); padding: var(--s-3) var(--s-4); background: rgba(6,9,16,0.5); border: 1px solid var(--borde); border-radius: var(--radio); }
+.medidor__fila span { color: var(--escarcha); }
+.medidor__scan { position: absolute; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--vigia), transparent); opacity: 0.6; animation: escaneo 3.6s var(--ease) infinite; }
+@keyframes escaneo { 0% { top: 8%; } 50% { top: 92%; } 100% { top: 8%; } }
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .medidor { max-width: 440px; margin-inline: auto; }
+}
+
+/* ==================== PROBLEMA (analogía del local) ==================== */
+.analogia { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5); margin-top: var(--s-7); }
+.analogia__item { padding: var(--s-5); }
+.analogia__item .par { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--vigia-2); background: var(--vigia-tenue); padding: 3px 9px; border-radius: 3px; display: inline-block; margin-bottom: var(--s-3); }
+.analogia__item h4 { font-family: var(--f-texto); font-size: var(--t-base); margin-bottom: var(--s-2); color: var(--escarcha); }
+.analogia__item p { font-size: var(--t-sm); color: var(--escarcha-2); }
+@media (max-width: 760px) { .analogia { grid-template-columns: 1fr; } }
+
+.cita-clave { margin-top: var(--s-8); padding: var(--s-6) var(--s-7); border-left: 2px solid var(--vigia); background: var(--noche); }
+.cita-clave p { font-family: var(--f-display); font-weight: 500; font-size: var(--t-lg); line-height: 1.4; max-width: 48ch; color: var(--escarcha); }
+
+.problema-cierre { margin-top: var(--s-8); max-width: 62ch; }
+.problema-cierre h3 { margin-bottom: var(--s-4); }
+.problema-cierre p { color: var(--escarcha-2); }
+.problema-cierre strong { color: var(--escarcha); }
+
+/* ==================== ESCALERA DE SERVICIOS ==================== */
+.escalera { display: flex; flex-direction: column; gap: var(--s-4); margin-top: var(--s-7); }
+.nivel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--s-5);
+  align-items: center;
+  padding: var(--s-6);
+  background: var(--acero);
+  border: 1px solid var(--borde);
+  transition: transform var(--medio), border-color var(--medio);
+  clip-path: var(--clip-bisel);
+}
+.nivel:hover { transform: translateX(6px); border-color: var(--vigia); }
+.nivel__num { font-family: var(--f-display); font-size: var(--t-2xl); color: var(--vigia); width: 52px; text-align: center; }
+.nivel__cuerpo h3 { font-size: var(--t-lg); margin-bottom: var(--s-2); }
+.nivel__cuerpo p { font-size: var(--t-sm); color: var(--escarcha-2); max-width: 60ch; }
+.nivel__cuerpo .frase { display: block; margin-top: var(--s-3); font-family: var(--f-display); font-size: var(--t-sm); color: var(--vigia-2); font-style: italic; }
+.nivel__precio { text-align: right; white-space: nowrap; }
+.nivel__precio b { font-family: var(--f-display); font-size: var(--t-md); color: var(--escarcha); display: block; }
+.nivel__precio span { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--niebla); }
+.nivel--gratis { border-color: var(--jade); }
+.nivel--gratis .nivel__num { color: var(--jade); }
+@media (max-width: 760px) {
+  .nivel { grid-template-columns: auto 1fr; }
+  .nivel__precio { grid-column: 2; text-align: left; margin-top: var(--s-2); }
+}
+
+/* ==================== DIFERENCIADORES ==================== */
+.difs { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-5); margin-top: var(--s-7); }
+.dif { padding: var(--s-6); }
+.dif__ico { width: 44px; height: 44px; border: 1px solid var(--borde); background: var(--vigia-tenue); display: grid; place-items: center; margin-bottom: var(--s-4); }
+.dif__ico svg { width: 22px; height: 22px; stroke: var(--vigia); }
+.dif h3 { font-size: var(--t-md); margin-bottom: var(--s-3); }
+.dif p { font-size: var(--t-sm); color: var(--escarcha-2); }
+.dif--destacado { grid-column: span 2; background: var(--noche); display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); align-items: center; }
+.dif--destacado h3 { font-size: var(--t-xl); }
+.dif-doble { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+.dif-doble__col { background: var(--acero); border: 1px solid var(--borde); padding: var(--s-4); }
+.dif-doble__col h5 { font-family: var(--f-mono); font-size: var(--t-xs); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--s-2); }
+.dif-doble__col.ejec h5 { color: var(--jade); }
+.dif-doble__col.tec h5 { color: var(--vigia-2); }
+.dif-doble__col p { font-size: var(--t-xs); color: var(--escarcha-2); }
+@media (max-width: 760px) {
+  .difs, .dif--destacado { grid-template-columns: 1fr; }
+  .dif--destacado { grid-column: span 1; }
+}
+
+/* ==================== COMPETENCIA ==================== */
+.tabla-wrap { overflow-x: auto; margin-top: var(--s-7); }
+.tabla-comp { width: 100%; border-collapse: collapse; font-size: var(--t-sm); }
+.tabla-comp th, .tabla-comp td { padding: var(--s-4); text-align: center; border-bottom: 1px solid var(--borde); }
+.tabla-comp th:first-child, .tabla-comp td:first-child { text-align: left; font-weight: 600; color: var(--escarcha); }
+.tabla-comp thead th { font-family: var(--f-mono); font-size: var(--t-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--escarcha-2); font-weight: 500; }
+.tabla-comp thead th.garmr { color: var(--abismo); background: var(--vigia); }
+.tabla-comp td.garmr { background: var(--vigia-tenue); font-weight: 600; color: var(--escarcha); }
+.tabla-comp .si { color: var(--jade); font-weight: 700; }
+.tabla-comp .no { color: var(--niebla); }
+
+/* ==================== CTA FINAL ==================== */
+.cta-final { text-align: center; }
+.cta-final h2 { max-width: 22ch; margin: 0 auto var(--s-5); }
+.cta-final .lead { margin: 0 auto var(--s-6); }

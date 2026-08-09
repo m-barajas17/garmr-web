@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GARMR — Seguridad para sitios web de pymes colombianas</title>
+  <meta name="description" content="GARMR vigila la seguridad de tu sitio en WordPress. Diagnóstico gratuito, auditoría, corrección y monitoreo — explicado en lenguaje de negocio." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="marca" href="index.html">
+        <img src="assets/sigilo.svg" alt="" width="34" height="34" />
+        GAR<b>M</b>R
+      </a>
+      <nav class="nav__links" id="menu">
+        <a href="#problema">El problema</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#diferencia">Por qué GARMR</a>
+        <a href="#competencia">Comparación</a>
+        <a href="login.html">Entrar</a>
+        <a class="btn btn--primario" href="register.html">Diagnóstico gratis</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero">
+      <img class="hero__sigilo" src="assets/sigilo.svg" alt="" aria-hidden="true" />
+      <div class="contenedor hero__grid">
+        <div>
+          <span class="eyebrow">Seguridad web · WordPress · Pymes</span>
+          <h1>Su sitio tiene una puerta abierta.<br /><span class="luz">Alguien debería vigilarla.</span></h1>
+          <p class="hero__lead">Miles de negocios en Colombia tienen su sitio en WordPress y nadie lo revisa desde el día que se lo entregaron. GARMR encuentra lo que quedó expuesto — y le enseña a cerrarlo.</p>
+          <div class="hero__acciones">
+            <a class="btn btn--primario btn--grande" href="register.html">Revisar mi sitio gratis</a>
+            <a class="btn btn--fantasma btn--grande" href="#servicios">Ver cómo funciona</a>
+          </div>
+          <p class="hero__nota"><span>✓</span> Sin instalar nada &nbsp;·&nbsp; <span>✓</span> Sin contraseñas &nbsp;·&nbsp; <span>✓</span> En lenguaje claro</p>
+        </div>
+
+        <!-- Elemento firma: el medidor de guardia -->
+        <div class="medidor" id="medidorHero">
+          <div class="medidor__scan"></div>
+          <div class="medidor__top">
+            <span class="medidor__tag">Diagnóstico</span>
+            <span class="medidor__url">tienda-ejemplo.com.co</span>
+          </div>
+          <div class="medidor__dial">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+              <circle class="medidor__aro-fondo" cx="100" cy="100" r="85" />
+              <circle class="medidor__aro" id="aroHero" cx="100" cy="100" r="85" />
+            </svg>
+            <div class="medidor__cifra">
+              <b id="cifraHero">0</b>
+              <span>DE 100</span>
+            </div>
+          </div>
+          <p class="medidor__estado">Requiere atención</p>
+          <div class="medidor__hallazgos">
+            <div class="medidor__fila"><span>Archivo interno expuesto</span><span class="insignia insignia--critica">Crítica</span></div>
+            <div class="medidor__fila"><span>Faltan protecciones del navegador</span><span class="insignia insignia--media">Media</span></div>
+            <div class="medidor__fila"><span>Versiones de tecnología visibles</span><span class="insignia insignia--baja">Baja</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="seccion" id="problema">
+      <div class="contenedor">
+        <span class="eyebrow">El problema</span>
+        <h2>Piense en su sitio como un local comercial</h2>
+        <p class="lead">Si esta idea le hace clic, el resto es fácil. Un sitio web funciona igual que un local: tiene un espacio arrendado, una puerta, máquinas de terceros adentro y copias de las llaves repartidas.</p>
+
+        <div class="analogia">
+          <article class="tarjeta tarjeta--bisel analogia__item">
+            <span class="par">Hosting = local arrendado</span>
+            <h4>El espacio donde vive</h4>
+            <p>Usted paga un arriendo mensual por el servidor. Si el edificio tiene fallas, su local también.</p>
+          </article>
+          <article class="tarjeta tarjeta--bisel analogia__item">
+            <span class="par">Plugins = máquinas de terceros</span>
+            <h4>Lo que instaló adentro</h4>
+            <p>Cada complemento es una máquina que un desconocido fabricó y usted metió a su local, con llave incluida. Un sitio típico tiene 20 o más.</p>
+          </article>
+          <article class="tarjeta tarjeta--bisel analogia__item">
+            <span class="par">Backups = caja fuerte externa</span>
+            <h4>Su copia de respaldo</h4>
+            <p>Si mañana desaparece todo, ¿tiene una copia guardada afuera? ¿Alguna vez probó que sirve?</p>
+          </article>
+        </div>
+
+        <div class="cita-clave">
+          <p>"¿Usted dejaría su local abierto de noche, sin llave, durante tres años, solo porque nunca ha pasado nada?"</p>
+        </div>
+
+        <div class="problema-cierre">
+          <h3>Nadie escogió atacarlo a usted</h3>
+          <p>La pregunta más común es <em>"¿quién va a querer hackear mi negocio?"</em>. La respuesta incómoda: nadie en particular. Los atacantes no buscan negocios, buscan <strong>versiones vulnerables</strong>. Un programa automático recorre internet buscando cualquier sitio con cierto complemento desactualizado y lo aprovecha solo. No hay un "quién". Hay un robot, y encuentra al que dejó la puerta abierta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="seccion" id="servicios">
+      <div class="contenedor">
+        <span class="eyebrow">Servicios</span>
+        <h2>Una escalera de cuatro peldaños</h2>
+        <p class="lead">Cada nivel resuelve un momento distinto. Empieza gratis, para que vea su situación antes de decidir nada.</p>
+
+        <div class="escalera">
+          <article class="nivel nivel--gratis revelar">
+            <span class="nivel__num">0</span>
+            <div class="nivel__cuerpo">
+              <h3>Diagnóstico externo</h3>
+              <p>Revisamos su sitio como lo ve cualquier persona en internet: sin contraseñas, sin tocar nada por dentro. Le entregamos un puntaje y los hallazgos, explicados sin tecnicismos.</p>
+              <span class="frase">"No sabía que esto estaba así."</span>
+            </div>
+            <div class="nivel__precio"><b>Gratis</b><span>siempre</span></div>
+          </article>
+
+          <article class="nivel revelar">
+            <span class="nivel__num">1</span>
+            <div class="nivel__cuerpo">
+              <h3>Auditoría completa</h3>
+              <p>Con su autorización, entramos a fondo: complementos, usuarios, configuración, respaldos y correo. Verificación manual para descartar falsas alarmas.</p>
+              <span class="frase">"Ahora sé exactamente qué hay que arreglar."</span>
+            </div>
+            <div class="nivel__precio"><b>desde $700.000</b><span>COP · pago único</span></div>
+          </article>
+
+          <article class="nivel revelar">
+            <span class="nivel__num">2</span>
+            <div class="nivel__cuerpo">
+              <h3>Corrección y blindaje</h3>
+              <p>Ejecutamos el plan sin romper nada: copia de respaldo primero, un cambio a la vez, con prueba en cada paso. Al final, volvemos a medir para mostrarle el antes y el después.</p>
+              <span class="frase">"Ya está resuelto."</span>
+            </div>
+            <div class="nivel__precio"><b>desde $900.000</b><span>COP · según hallazgos</span></div>
+          </article>
+
+          <article class="nivel revelar">
+            <span class="nivel__num">3</span>
+            <div class="nivel__cuerpo">
+              <h3>Monitoreo mensual</h3>
+              <p>Alguien pendiente todo el mes: actualizaciones probadas, vigilancia de nuevas vulnerabilidades que afecten a <em>sus</em> complementos, y un reporte de una página.</p>
+              <span class="frase">"Alguien está pendiente por mí."</span>
+            </div>
+            <div class="nivel__precio"><b>desde $180.000</b><span>COP · al mes</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIADORES -->
+    <section class="seccion" id="diferencia">
+      <div class="contenedor">
+        <span class="eyebrow">Por qué GARMR</span>
+        <h2>Lo que nos hace distintos</h2>
+
+        <div class="difs">
+          <article class="dif dif--destacado tarjeta tarjeta--bisel revelar">
+            <div>
+              <span class="eyebrow">El diferenciador central</span>
+              <h3>Un informe para el dueño, otro para el técnico</h3>
+              <p>La razón por la que la mayoría no arregla su seguridad es que no la entiende. Entregamos dos documentos del mismo hallazgo: uno que usted decide, otro que su desarrollador ejecuta.</p>
+            </div>
+            <div class="dif-doble">
+              <div class="dif-doble__col ejec">
+                <h5>Informe ejecutivo</h5>
+                <p>¿Esto me puede costar plata? ¿Qué tan urgente? Puntaje, riesgo en palabras simples y un plan con plazos.</p>
+              </div>
+              <div class="dif-doble__col tec">
+                <h5>Informe técnico</h5>
+                <p>Qué exactamente, dónde, y los pasos precisos de corrección, con evidencia. Escrito para quien va a arreglarlo.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="dif tarjeta tarjeta--bisel tarjeta--interactiva revelar">
+            <div class="dif__ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/></svg></div>
+            <h3>Especializados en WordPress</h3>
+            <p>No somos generalistas. Conocemos dónde falla WordPress específicamente, qué complementos dan problemas y qué errores se repiten. Se nota en los primeros cinco minutos.</p>
+          </article>
+
+          <article class="dif tarjeta tarjeta--bisel tarjeta--interactiva revelar">
+            <div class="dif__ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3>Riesgo en consecuencias reales</h3>
+            <p>No decimos "vulnerabilidad tipo X". Decimos "si esto pasa, su tienda deja de vender / Google lo marca / le mandan correos falsos con su nombre".</p>
+          </article>
+
+          <article class="dif tarjeta tarjeta--bisel tarjeta--interactiva revelar">
+            <div class="dif__ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <h3>Método, no improvisación</h3>
+            <p>Cada hallazgo tiene un código rastreable y sigue un catálogo mapeado a los estándares mundiales (OWASP). El trabajo es repetible y verificable.</p>
+          </article>
+
+          <article class="dif tarjeta tarjeta--bisel tarjeta--interactiva revelar">
+            <div class="dif__ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <h3>Empezar no cuesta nada</h3>
+            <p>El diagnóstico es gratis porque es imposible cuidar algo que no sabe que está en riesgo. Le mostramos su situación con evidencia de su propio sitio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIA -->
+    <section class="seccion" id="competencia">
+      <div class="contenedor">
+        <span class="eyebrow">Comparación</span>
+        <h2>Contra qué compite realmente</h2>
+        <p class="lead">Nuestro mayor competidor no es otra empresa: es la decisión de no hacer nada. Es gratis, no exige decidir, y funciona el 95% de los días — hasta el día que no.</p>
+
+        <div class="tabla-wrap">
+          <table class="tabla-comp">
+            <thead>
+              <tr>
+                <th>Capacidad</th>
+                <th>No hacer nada</th>
+                <th>Un complemento</th>
+                <th>El que hizo el sitio</th>
+                <th>Consultora grande</th>
+                <th class="garmr">GARMR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Detecta el problema</td><td class="no">No</td><td>Parcial</td><td class="no">No</td><td class="si">Sí</td><td class="garmr si">Sí</td></tr>
+              <tr><td>Se lo explica al dueño</td><td class="no">—</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="garmr si">Sí</td></tr>
+              <tr><td>Lo corrige</td><td class="no">No</td><td class="no">No</td><td>A veces</td><td class="si">Sí</td><td class="garmr si">Sí</td></tr>
+              <tr><td>Vigila con el tiempo</td><td class="no">No</td><td>Parcial</td><td class="no">No</td><td>Sí (caro)</td><td class="garmr si">Sí</td></tr>
+              <tr><td>Al alcance de una pyme</td><td class="no">—</td><td class="si">Sí</td><td class="si">Sí</td><td class="no">No</td><td class="garmr si">Sí</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="seccion cta-final">
+      <div class="contenedor">
+        <span class="eyebrow" style="justify-content:center;">Empiece hoy</span>
+        <h2>Vea qué encontramos en su sitio, sin costo</h2>
+        <p class="lead">Le entregamos el puntaje y los hallazgos en lenguaje claro. Usted decide qué hacer después.</p>
+        <a class="btn btn--primario btn--grande" href="register.html">Solicitar diagnóstico gratuito</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer__grid">
+        <div>
+          <a class="marca" href="index.html" style="margin-bottom: var(--s-4);">
+            <img src="assets/sigilo.svg" alt="" width="34" height="34" />
+            GAR<b>M</b>R
+          </a>
+          <p style="font-size: var(--t-sm); max-width: 40ch;">El guardián que vigila lo que su sitio no le muestra. Seguridad web para pymes colombianas.</p>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <a href="#servicios">Diagnóstico gratuito</a>
+          <a href="#servicios">Auditoría completa</a>
+          <a href="#servicios">Corrección y blindaje</a>
+          <a href="#servicios">Monitoreo mensual</a>
+        </div>
+        <div>
+          <h4>Plataforma</h4>
+          <a href="login.html">Iniciar sesión</a>
+          <a href="register.html">Crear cuenta</a>
+          <a href="dashboard.html">Ver panel de ejemplo</a>
+        </div>
+      </div>
+      <div class="footer__base">
+        <span>© 2026 GARMR · Proyecto académico</span>
+        <span>Marco legal: Ley 1273 de 2009 · Ley 1581 de 2012</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Medidor de guardia del hero: anima aro y número al ser visible.
+    (function () {
+      var aro = document.getElementById("aroHero");
+      var cifra = document.getElementById("cifraHero");
+      var medidor = document.getElementById("medidorHero");
+      if (!aro || !cifra || !medidor) return;
+      var C = 2 * Math.PI * 85;
+      aro.style.strokeDasharray = String(C);
+      aro.style.strokeDashoffset = String(C);
+      var disparado = false;
+      function animar(obj) {
+        aro.style.strokeDashoffset = String(C * (1 - obj / 100));
+        var ini = null;
+        function paso(ts) {
+          if (!ini) ini = ts;
+          var p = Math.min((ts - ini) / 1600, 1);
+          cifra.textContent = String(Math.round(obj * (1 - Math.pow(1 - p, 3))));
+          if (p < 1) requestAnimationFrame(paso);
+        }
+        requestAnimationFrame(paso);
+      }
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !disparado) { disparado = true; animar(64); }
+        });
+      }, { threshold: 0.4 }).observe(medidor);
+    })();
+  </script>
+</body>
+</html>
