@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laboratorios · GARMR</title>
+  <meta name="description" content="Cae y aprende: laboratorios seguros donde vives un ciberataque sin riesgo y aprendes a evitarlo." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/laboratorios.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="marca" href="index.html">
+        <img src="assets/sigilo.svg" alt="" width="34" height="34" />
+        GAR<b>M</b>R
+      </a>
+      <nav class="nav__links" id="menu">
+        <a href="index.html#problema">El problema</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="laboratorios.html">Laboratorios</a>
+        <a href="login.html">Entrar</a>
+        <a class="btn btn--primario" href="register.html">Diagnóstico gratis</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO DEL HUB -->
+    <section class="lab-hero">
+      <div class="contenedor">
+        <span class="eyebrow">Laboratorios · Cae y aprende</span>
+        <h1>La mejor forma de no caer en un ataque<br /><span class="luz">es haber caído en uno seguro.</span></h1>
+        <p class="lead">Aquí vives un ciberataque real, pero sin ningún riesgo. Tomas decisiones, y Garmr te muestra qué pasó y cómo evitarlo la próxima vez — con tu propio olfato.</p>
+
+        <!-- Selector -->
+        <div class="lab-grid">
+          <button class="lab-card activa" data-lab="phishing" id="cardPhishing">
+            <span class="num">LAB 01</span>
+            <h3>El correo trampa</h3>
+            <p>Te llega un correo sospechoso. ¿Caerías? Aprende a oler el phishing.</p>
+          </button>
+          <button class="lab-card bloqueada" disabled>
+            <span class="num">LAB 02</span>
+            <h3>La clave débil</h3>
+            <p>Descubre en vivo cuánto tarda un atacante en romper tu contraseña.</p>
+            <span class="pronto">Próximamente</span>
+          </button>
+          <button class="lab-card bloqueada" disabled>
+            <span class="num">LAB 03</span>
+            <h3>El plugin abandonado</h3>
+            <p>Vive cómo un complemento sin actualizar abre la puerta.</p>
+            <span class="pronto">Próximamente</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LABORATORIO 1: PHISHING -->
+    <section class="seccion" style="padding-top: 0;">
+      <div class="contenedor">
+        <div class="lab-escena" id="labPhishing">
+          <div class="lab-intro">
+            <img src="assets/sigilo.svg" alt="" />
+            <div class="burbuja">
+              <strong>Garmr:</strong> Acaban de dejar este correo en tu bandeja. Léelo con calma… y decide qué harías <em>en la vida real</em>. No hay respuestas malas aquí: para eso es el laboratorio.
+            </div>
+          </div>
+
+          <!-- Correo mockup -->
+          <div class="correo">
+            <div class="correo__barra">
+              <span></span><span></span><span></span>
+              <small>bandeja de entrada — 1 mensaje nuevo</small>
+            </div>
+            <div class="correo__cab">
+              <div class="correo__de">
+                <div class="correo__avatar">B</div>
+                <div class="correo__de-info">
+                  <b>Soporte BancoSeguro</b>
+                  <span class="senal" data-senal="1" data-nota="El dominio real de un banco nunca es así. Esto no es 'banco-seguro', es un dominio cualquiera.">seguridad@banco-seguro-verificacion-cliente.com</span>
+                </div>
+              </div>
+              <div class="correo__asunto">
+                <span class="senal" data-senal="2" data-nota="La urgencia es la trampa: te apuran para que no pienses.">⚠️ ACCIÓN URGENTE: su cuenta será suspendida en 24 horas</span>
+              </div>
+            </div>
+            <div class="correo__cuerpo">
+              <p><span class="senal" data-senal="3" data-nota="Tu banco te llama por tu nombre. 'Estimado cliente' es de molde, para miles.">Estimado cliente,</span></p>
+              <p>Detectamos actividad inusual en su cuenta. Por su seguridad, hemos limitado el acceso. Debe verificar su identidad de inmediato o su cuenta será suspendida permanentemente en las próximas 24 horas.</p>
+              <p>
+                <span class="correo__btn-falso" id="btnFalso">Verificar mi cuenta ahora</span>
+                <span class="correo__enlace-real senal" id="enlaceReal" data-senal="4" data-nota="El botón dice 'banco' pero te lleva a otra dirección. Ese es el anzuelo.">↳ el botón apunta a: http://verificar-cliente-seguro.ru/login</span>
+              </p>
+              <p style="color: var(--escarcha-2); font-size: var(--t-xs);">Este es un mensaje automático, no responda a este correo.</p>
+            </div>
+          </div>
+
+          <p style="font-size: var(--t-xs); color: var(--niebla); margin-top: var(--s-3);">💡 Pista: pasa el mouse por el botón antes de decidir.</p>
+
+          <!-- Decisión -->
+          <div class="lab-decision" id="labDecision">
+            <button class="btn btn--primario" data-eleccion="clic">Confío, hacer clic en el botón</button>
+            <button class="btn btn--fantasma" data-eleccion="sospecha">Esto es sospechoso, no hago clic</button>
+          </div>
+
+          <!-- Resultado -->
+          <div class="lab-resultado" id="labResultado">
+            <div class="veredicto" id="veredicto">
+              <img src="assets/sigilo.svg" alt="" />
+              <div>
+                <h3 id="veredictoTitulo"></h3>
+                <p id="veredictoTexto"></p>
+              </div>
+            </div>
+
+            <div class="senales-guia">
+              <h4>Las 4 señales que lo delataban</h4>
+              <p style="font-size: var(--t-sm); color: var(--escarcha-2); margin-bottom: var(--s-4);">Toca cada señal para verla resaltada en el correo de arriba.</p>
+
+              <button class="senal-paso" data-paso="1">
+                <span class="senal-paso__num">1</span>
+                <div><h5>El remitente disfrazado</h5><p>El dominio no es el del banco. Cualquiera puede escribir "BancoSeguro" como nombre; lo que importa es la dirección real.</p></div>
+              </button>
+              <button class="senal-paso" data-paso="2">
+                <span class="senal-paso__num">2</span>
+                <div><h5>La urgencia artificial</h5><p>"24 horas o se suspende" te empuja a actuar sin pensar. El miedo apaga el olfato.</p></div>
+              </button>
+              <button class="senal-paso" data-paso="3">
+                <span class="senal-paso__num">3</span>
+                <div><h5>El saludo genérico</h5><p>"Estimado cliente". Tu banco te conoce y usa tu nombre. Los ataques masivos, no.</p></div>
+              </button>
+              <button class="senal-paso" data-paso="4">
+                <span class="senal-paso__num">4</span>
+                <div><h5>El enlace que no coincide</h5><p>El botón dice una cosa y apunta a otra dirección (y termina en <span class="mono">.ru</span>). Ese es el anzuelo.</p></div>
+              </button>
+            </div>
+
+            <div class="lab-leccion">
+              <h4>Cómo no caer, en la vida real</h4>
+              <ul>
+                <li>Desconfía de todo lo que te meta prisa o miedo.</li>
+                <li>Nunca metas tu clave desde un enlace de un correo: entra tú, escribiendo la dirección del sitio.</li>
+                <li>Pasa el mouse por los enlaces y mira a dónde van de verdad.</li>
+                <li>Ante la duda, no hagas clic: llama al banco por su número oficial.</li>
+              </ul>
+              <div class="lab-reiniciar">
+                <button class="btn btn--fantasma" id="btnReiniciar">Repetir el laboratorio</button>
+                <a class="btn btn--primario" href="register.html">Revisar mi sitio gratis</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer__grid">
+        <div>
+          <a class="marca" href="index.html" style="margin-bottom: var(--s-4);">
+            <img src="assets/sigilo.svg" alt="" width="34" height="34" />
+            GAR<b>M</b>R
+          </a>
+          <p style="font-size: var(--t-sm); max-width: 40ch;">El guardián que vigila lo que su sitio no le muestra.</p>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <a href="index.html#servicios">Diagnóstico gratuito</a>
+          <a href="index.html#servicios">Auditoría completa</a>
+          <a href="index.html#servicios">Monitoreo mensual</a>
+        </div>
+        <div>
+          <h4>Plataforma</h4>
+          <a href="laboratorios.html">Laboratorios</a>
+          <a href="login.html">Iniciar sesión</a>
+          <a href="register.html">Crear cuenta</a>
+        </div>
+      </div>
+      <div class="footer__base">
+        <span>© 2026 GARMR · Proyecto académico</span>
+        <span>Marco legal: Ley 1273 de 2009 · Ley 1581 de 2012</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/lab-phishing.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>
